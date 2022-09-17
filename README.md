@@ -8,7 +8,7 @@
 
 <div align="center">
   <h3>
-    <a href="asdasd">
+    <a href="https://github.com/LucasLlusco/clockapp-javascript">
       Solution
     </a>
     <span> | </span>
