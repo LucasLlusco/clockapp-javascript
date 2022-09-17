@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="night-time-bg">
+        <section class="main-section container">
+            <div class="quote-content">
+                <div class="quote">
+                    <p class="quote-text"></p>
+                    <p class="quote-author"></p>
+                </div>
+                <div>
+                    <button id="refreshBtn">
+                        <img src="images/desktop/icon-refresh.svg" alt="refresh-svg">
+                    </button>
+                </div>                             
+            </div>
+            <div class="clock-content">
+                <div class="clock">
+                    <p id="greetingText"><img src="images/desktop/icon-sun.svg" alt="sun-svg"><span><span class="staticText">, it's currently</span></span></p>
+                    <p id="timeText"><span></span><span id="utc"></span></p>
+                    <p id="areaText"></p>
+                </div>
+                <div class="btn-container">
+                    <button id="expandBtn">
+                        <span>more</span>
+                        <span><i class="fas fa-chevron-circle-down"></i></span>
+                    </button>
+                </div>
+                
+            </div>
+        </section>
+        <section class="expanded-section hidden">
+            <div class="info-content container">
+                <div class="expand-left">
+                    <div class="expand-col">
+                        <p class="key">current timezone</p>
+                        <p class="value current-timeZone"></p>
+                    </div>
+                    <div class="expand-col">
+                        <p class="key">day of the week</p>
+                        <p class="value dayOfWeek"></p>
+                    </div>
+                </div>
+                <div class="expand-right">
+                    <div class="expand-col">
+                        <p class="key">day of the year</p>
+                        <p class="value dayOfYear"></p>
+                    </div>
+                    <div class="expand-col">
+                        <p class="key">week number</p>
+                        <p class="value weekNumber"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/script.js"></script>    
+</body>
+</html>
+
