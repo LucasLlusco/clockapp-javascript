@@ -19,11 +19,12 @@ getQuote()
 
 const getLocationDetails = async () => {
     try {
+
         const res = await fetch("https://api.ipbase.com/v1/json/?apikey=444a35f0-99ab-11ec-b4af-4bdc71d09ea9");
-        const data = await res.json() 
+        const data = await res.json()
         
         const timeZone = data.time_zone; 
-        const city = data.city;
+        const city = data.city; 
         const country = data.country_code; 
         getTimeDetails(timeZone, city, country)
     } catch (error) {
@@ -36,7 +37,7 @@ const getTimeDetails = async (locationTimeZone, locationCity, locationCountry) =
     const city = locationCity; 
     const country = locationCountry; 
     try {
-        const res = await fetch(`http://worldtimeapi.org/api/timezone/${timeZone}`);
+        const res = await fetch(`https://worldtimeapi.org/api/timezone/${timeZone}`);
         const data = await res.json() 
         const abbreviation = data.abbreviation;
         const dayOfWeek = data.day_of_week;
@@ -52,16 +53,17 @@ const getTimeDetails = async (locationTimeZone, locationCity, locationCountry) =
     }
 }
 
+
 const displayDetails = async (details) => {
     document.getElementById("areaText").innerHTML = `in ${details[6]}, ${details[7]}`
     document.getElementById("utc").innerHTML = `${details[0]}`;
     document.querySelector(".current-timeZone").innerHTML = `${details[4].replaceAll("/", "-")}`
-
     document.querySelector('.dayOfYear').innerHTML = `${details[2]}`;
     document.querySelector('.dayOfWeek').innerHTML = `${details[1]}`;
     document.querySelector('.weekNumber').innerHTML = `${details[3]}`;
 }
 getLocationDetails() 
+
 
 const btnExpand = document.getElementById("expandBtn");
 btnExpand.addEventListener("click", () => {
@@ -82,7 +84,7 @@ btnExpand.addEventListener("click", () => {
 const displayTime = () => {
     const today = new Date(); 
     const hours = today.getHours(); 
-    const minutes = today.getMinutes(); 
+    const minutes = today.getMinutes();
 
     const greetingText = document.getElementById("greetingText");
 
@@ -99,12 +101,12 @@ const displayTime = () => {
     }
 
     const hrs = addZero(hours);
-    const mins = addZero(minutes);
+    const mins = addZero(minutes); 
     const time = `${hrs}:${mins}`;
     document.getElementById("timeText").firstElementChild.innerHTML = time; 
 }              
 const addZero = (num) => {
-    num = String(num);
+    num = String(num); 
     while (num.length < 2) num = "0" + num; 
     return num 
 }
