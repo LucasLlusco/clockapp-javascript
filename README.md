@@ -8,7 +8,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://github.com/LucasLlusco/clockapp-javascript">
+    <a href="https://gleaming-palmier-3f859b.netlify.app/">
       Solution
     </a>
     <span> | </span>
